@@ -2,6 +2,7 @@
 # Playable Ads in one file
 ## Phaser 3 + Webpack 5 with auto base64 assets decode
 > A Phaser 3 project template for JavaScript (ES6 support via Babel) and Webpack 5 that includes local server with  hot-reloading for development and production builds in one file with assets on base64.
+
 [You can also try Parcel Template](https://github.com/vardanyanlg/phaser3-webpack-playable "Phaser 3 Playable Ads")
 
 ### Features
