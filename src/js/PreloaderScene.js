@@ -1,10 +1,6 @@
 import Phaser from "phaser";
 import MainScene from './MainScene.js';
 
-import sound_fxA from '../audio/sound_fx.mp3';
-
-import bgI from '../img/logo.png';
-
 let loadMain = false;
 let countDecodedAudio = 0;
 let allAudio = 0;
@@ -20,8 +16,8 @@ export default class PreloaderScene extends Phaser.Scene {
         console.log('%cSCENE::PreloaderScene', 'color: #fff; background: #f00;')
 
         this
-            .addAudio('sound_fx', sound_fxA)
-            .addTexture('bg', bgI)
+            .addAudio('sound_fx', require('../audio/sound_fx.mp3'))
+            .addTexture('bg', require('../img/logo.png'))
 
         this.textures.on('onload', () => countDecodedTexture++, this)
         this.sound.on('decoded', () => countDecodedAudio++, this)
