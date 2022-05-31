@@ -22,6 +22,35 @@ export default class PreloaderScene extends Phaser.Scene {
         this.textures.on('onload', () => countDecodedTexture++, this)
         this.sound.on('decoded', () => countDecodedAudio++, this)
     }
+    addBitmapText(key,vPNG,vXML) {
+        const blob = this.dataURLtoBlob(vPNG)
+        const url = URL.createObjectURL(blob);
+        const blob2 = this.dataURLtoBlob(vXML)
+        const url2 = URL.createObjectURL(blob2);
+
+        this.load.bitmapFont(key,url,url2)
+
+        return this
+    }
+    addAtlas(key,vPNG,vXML) {
+        const blob = this.dataURLtoBlob(vPNG)
+        const url = URL.createObjectURL(blob);
+        const blob2 = this.dataURLtoBlob(vXML)
+        const url2 = URL.createObjectURL(blob2);
+
+        this.load.atlas(key,url,url2)
+
+        return this
+    }
+    dataURLtoBlob(dataurl) {
+        let arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+            bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+        while (n--) {
+            u8arr[n] = bstr.charCodeAt(n);
+        }
+        
+        return new Blob([u8arr], { type: mime });
+    }
     addAudio(arg1,arg2) {
         allAudio++
         this.sound.decodeAudio(arg1, arg2)
