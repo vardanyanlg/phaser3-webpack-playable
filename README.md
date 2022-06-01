@@ -44,13 +44,13 @@ The finished `index.html` file is waiting for you in the `dist` folder
 
 #### Assets Loading
 Resource loading is declared in `js/PreloaderScene.js`
-`import filenameCustom from '../img/filename.png'` or `import filenameCustom from '../audio/filename.mp3'` for each asset
-
-##### Load Audio
-Use `this.addAudio("custom_name",filenameCustom)` function to load sounds.
-
-##### Load Image
-Use `this.addTexture("custom_name", filenameCustom)` function to load images
+```bash
+this
+    .addAudio("custom_name",'../audio/filename.mp3')
+    .addTexture("custom_name2",'../img/filename2.png')
+    .addBitmapText('custom_name3',require('../font/filename3.png'),require('../font/filename3.xml'))
+    .addAtlas('custom_name4',require('../img/filename4.png'),require('../img/filename4.json'))
+```
 
 
 ### Use Yarn Plug'n'Play
